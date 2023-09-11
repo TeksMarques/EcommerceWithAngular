@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NotificacaoService } from 'src/app/notificacao.service';
 import { IProduto } from 'src/app/produtos';
 import { ProdutosService } from 'src/app/produtos.service';
 
@@ -14,12 +15,17 @@ export class DetalhesProdutoComponent {
 
   constructor(
     private produtosService: ProdutosService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private notifica: NotificacaoService
   ) {}
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const id = Number(routeParams.get('id'));
     this.produto = this.produtosService.getById(id);
+  }
+
+  adicionarAoCarrinho() {
+    this.notifica.notificar('Produto adicionado ao carrinho!');
   }
 }
