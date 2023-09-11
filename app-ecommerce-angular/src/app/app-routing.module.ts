@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
+import { DetalhesProdutoComponent } from './produtos/detalhes-produto/detalhes-produto.component';
 
 const routes: Routes = [
   {
