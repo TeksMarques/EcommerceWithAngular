@@ -8,9 +8,11 @@
       <ul>
         <li><a routerLink="/produtos">Produtos</a></li>
         <li>
-          <a
+          <a routerLink="/carrinho"
             ><i class="fa-solid fa-cart-shopping"></i> Carrinhos
-            <span class="badge-carrinho">0</span></a
+            <span class="badge-carrinho">{{
+              carrinhoService.getItens().length
+            }}</span></a
           >
         </li>
         <li><a>Contatos</a></li>

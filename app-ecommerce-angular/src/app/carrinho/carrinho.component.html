@@ -1,0 +1,23 @@
+<h2 class="cart-title">Carrinho</h2>
+<div>
+  <ul>
+    <li *ngFor="let item of itensCarrinho">
+      <img [src]="item.imagem" alt="imagem do item" />
+      <p>{{ item.descricao }}</p>
+      <p>Preço: {{ item.preco | currency : "BRL" }}</p>
+      <label>
+        Quantidade:
+        <input
+          type="number"
+          [(ngModel)]="item.quantidade"
+          (change)="calcularTotal()"
+        />
+      </label>
+      <button class="remove-button" (click)="removerItem(item.id)">
+        <i class="fa-solid fa-x"></i>
+      </button>
+    </li>
+  </ul>
+</div>
+<h2 class="cart-total">Total: {{ calculaTotal | currency : "BRL" }}</h2>
+<button class="buy-button" (click)="finalizarCompra()">Finalizar Compra</button>
