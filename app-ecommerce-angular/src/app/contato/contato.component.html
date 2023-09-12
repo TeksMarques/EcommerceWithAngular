@@ -1,0 +1,197 @@
+<h2 class="contact__title">Fale conosco</h2>
+<section class="contact__container">
+  <form
+    class="contact-form"
+    [formGroup]="contatoForm"
+    (ngSubmit)="enviarFormulario()"
+  >
+    <input
+      type="text"
+      placeholder="Digite seu nome"
+      formControlName="nome"
+      [class.valid]="
+        contatoForm.controls['nome'].valid &&
+        contatoForm.controls['nome'].touched
+      "
+      [class.invalid]="
+        contatoForm.controls['nome'].invalid &&
+        (contatoForm.controls['nome'].touched ||
+          contatoForm.controls['nome'].dirty)
+      "
+    />
+    <div
+      *ngIf="
+        contatoForm.controls['nome'].invalid &&
+        (contatoForm.controls['nome'].touched ||
+          contatoForm.controls['nome'].dirty)
+      "
+    >
+      <small
+        class="error-message"
+        *ngIf="contatoForm.controls['nome'].hasError('minlength')"
+      >
+        Este campo deve ter no mínimo 4 caracteres!
+      </small>
+      <small
+        class="error-message"
+        *ngIf="contatoForm.controls['nome'].hasError('required')"
+      >
+        Este campo é obrigatório!
+      </small>
+    </div>
+    <input
+      type="assunto"
+      placeholder="Digite o assunto"
+      formControlName="assunto"
+      [class.valid]="
+        contatoForm.controls['assunto'].valid &&
+        contatoForm.controls['assunto'].touched
+      "
+      [class.invalid]="
+        contatoForm.controls['assunto'].invalid &&
+        (contatoForm.controls['assunto'].touched ||
+          contatoForm.controls['assunto'].dirty)
+      "
+    />
+    <div
+      *ngIf="
+        contatoForm.controls['assunto'].invalid &&
+        (contatoForm.controls['assunto'].touched ||
+          contatoForm.controls['assunto'].dirty)
+      "
+    >
+      <small
+        class="error-message"
+        *ngIf="contatoForm.controls['assunto'].hasError('minlength')"
+      >
+        Este campo deve ter no mínimo 10 caracteres!
+      </small>
+      <small
+        class="error-message"
+        *ngIf="contatoForm.controls['assunto'].hasError('required')"
+      >
+        Este campo é obrigatório!
+      </small>
+    </div>
+    <input
+      type="tel"
+      placeholder="(00) 00000-0000"
+      formControlName="telefone"
+      [class.valid]="
+        contatoForm.controls['telefone'].valid &&
+        contatoForm.controls['telefone'].touched
+      "
+      [class.invalid]="
+        contatoForm.controls['telefone'].invalid &&
+        (contatoForm.controls['telefone'].touched ||
+          contatoForm.controls['telefone'].dirty)
+      "
+    />
+    <div
+      *ngIf="
+        contatoForm.controls['telefone'].invalid &&
+        (contatoForm.controls['telefone'].touched ||
+          contatoForm.controls['telefone'].dirty)
+      "
+    >
+      <small
+        class="error-message"
+        *ngIf="contatoForm.controls['telefone'].hasError('minlength')"
+      >
+        Este campo deve ter no mínimo 11 caracteres!
+      </small>
+      <small
+        class="error-message"
+        *ngIf="contatoForm.controls['telefone'].hasError('required')"
+      >
+        Este campo é obrigatório!
+      </small>
+    </div>
+    <input
+      type="email"
+      placeholder="Digite seu email"
+      formControlName="email"
+      [class.valid]="
+        contatoForm.controls['email'].valid &&
+        contatoForm.controls['email'].touched
+      "
+      [class.invalid]="
+        contatoForm.controls['email'].invalid &&
+        (contatoForm.controls['email'].touched ||
+          contatoForm.controls['email'].dirty)
+      "
+    />
+    <div
+      *ngIf="
+        contatoForm.controls['email'].invalid &&
+        (contatoForm.controls['email'].touched ||
+          contatoForm.controls['email'].dirty)
+      "
+    >
+      <small
+        class="error-message"
+        *ngIf="contatoForm.controls['email'].hasError('email')"
+      >
+        Este campo precisa de um email válido!
+      </small>
+      <small
+        class="error-message"
+        *ngIf="contatoForm.controls['email'].hasError('required')"
+      >
+        Este campo é obrigatório!
+      </small>
+    </div>
+    <textarea
+      maxlength="300"
+      placeholder="Digite aqui sua mensagem..."
+      rows="4"
+      formControlName="mensagem"
+      [class.valid]="
+        contatoForm.controls['mensagem'].valid &&
+        contatoForm.controls['mensagem'].touched
+      "
+      [class.invalid]="
+        contatoForm.controls['mensagem'].invalid &&
+        (contatoForm.controls['mensagem'].touched ||
+          contatoForm.controls['mensagem'].dirty)
+      "
+    ></textarea>
+    <div
+      *ngIf="
+        contatoForm.controls['mensagem'].invalid &&
+        (contatoForm.controls['mensagem'].touched ||
+          contatoForm.controls['mensagem'].dirty)
+      "
+    >
+      <small
+        class="error-message"
+        *ngIf="contatoForm.controls['mensagem'].hasError('minlength')"
+      >
+        Este campo deve ter no mínimo 20 caracteres!
+      </small>
+      <small
+        class="error-message"
+        *ngIf="contatoForm.controls['mensagem'].hasError('required')"
+      >
+        Este campo é obrigatório!
+      </small>
+    </div>
+    <button [disabled]="contatoForm.invalid" type="submit">Enviar</button>
+  </form>
+  <address>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14625.417478527503!2d-46.6879954!3d-23.5916207!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce574722cfc807%3A0xc22353ea3b3d0266!2sS%C3%A3o%20Paulo%20Corporate%20Towers!5e0!3m2!1spt-PT!2sbr!4v1694541893351!5m2!1spt-PT!2sbr"
+      width="600"
+      height="350"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+    <p>
+      ED SÃO PAULO CORPORATE TOWERS TORRE NORTE AV. PRES. JUSCELINO KUBITSCHEK
+      <br />
+      N° 1909, 27º ANDAR, BAIRRO: VILA NOVA CONCEIÇÃO CEP : 04543-907
+    </p>
+  </address>
+</section>
