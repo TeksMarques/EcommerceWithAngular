@@ -1,3 +1,6 @@
+Aplicação desenvolvida durante o programa de start da CapGemini - Trilha de Java
+
+
 # AppEcommerceAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
